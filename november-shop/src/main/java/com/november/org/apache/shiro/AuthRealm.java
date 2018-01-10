@@ -13,7 +13,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.november.system.User;
+import com.november.system.domain.User;
 import com.november.system.service.UserService;
 
 /**

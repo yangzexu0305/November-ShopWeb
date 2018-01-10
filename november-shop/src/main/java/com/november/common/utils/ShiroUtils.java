@@ -3,7 +3,7 @@ package com.november.common.utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
-import com.november.system.User;
+import com.november.system.domain.User;
 
 /**
  * shiro工具类

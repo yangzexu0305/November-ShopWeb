@@ -1,8 +1,9 @@
-package com.november.system;
+package com.november.system.domain;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 public class User implements Serializable{
 
@@ -36,10 +37,11 @@ public class User implements Serializable{
 	private Date lastLoginedTime;// 最后一次登录时间
 	private Date pswChangeDate;// 密码修改时间
 	private String locked;// 帐号是否可用    0-启用   1-锁定
+	private String status;//审核状态
 	private Date createTime;//创建时间
 	private Date updateTime;//更新时间
 	
-	
+	private Set<Role> roles;
 	public String getLoginName() {
 		return loginName;
 	}
@@ -207,6 +209,18 @@ public class User implements Serializable{
 	}
 	public void setConsume(BigDecimal consume) {
 		this.consume = consume;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Set<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
 	
 	

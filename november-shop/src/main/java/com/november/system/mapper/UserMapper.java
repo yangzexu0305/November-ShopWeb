@@ -1,6 +1,8 @@
 package com.november.system.mapper;
 
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion.User;
+import org.apache.ibatis.annotations.Select;
+
+import com.november.system.domain.User;
 
 public interface UserMapper {
 	

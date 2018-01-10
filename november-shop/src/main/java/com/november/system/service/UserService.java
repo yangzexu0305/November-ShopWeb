@@ -1,6 +1,6 @@
 package com.november.system.service;
 
-import com.november.system.User;
+import com.november.system.domain.User;
 
 /**
  * 用户查询接口
