@@ -1,6 +1,6 @@
 package com.november.system.mapper;
 
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Param;
 
 import com.november.system.domain.User;
 
@@ -11,5 +11,5 @@ public interface UserMapper {
 	 * @param username
 	 * @return
 	 */
-	public User findUserByName(String username);
+	public User findUserByName(@Param("username")String username);
 }

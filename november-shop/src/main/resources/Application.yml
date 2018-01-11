@@ -1,5 +1,6 @@
 server:
   port: 8080
+  servlet-path: /
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,3 +26,6 @@ logging:
 mybatis: 
   configuration:
     map-underscore-to-camel-case: true  #设置自动驼峰命名转换，在xml中可以直接配置mapUnderscoreToCamelCase属性
+  mapper-locations:
+  - classpath*:com/november/**/mapper/*.xml
+  type-aliases-package: com.november.**.domain

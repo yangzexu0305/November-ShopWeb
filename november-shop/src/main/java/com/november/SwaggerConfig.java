@@ -19,7 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 2018年1月9日
  *
  */
-@Configuration
+//@Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .genericModelSubstitutes(ResponseEntity.class)
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(true)
-                .pathMapping("/")
+                .pathMapping("/login")
                 .select()
                 .paths(PathSelectors.any())//过滤的接口
                 .build()
