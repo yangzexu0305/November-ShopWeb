@@ -51,7 +51,7 @@ public class ShiroConfiguration {
 		ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
 		bean.setSecurityManager( manager);
 		//配置登陆的url和登陆成功的url
-		bean.setLoginUrl("/login");
+		bean.setLoginUrl("/");
 		bean.setSuccessUrl("/index");
 		bean.setUnauthorizedUrl("/403");
 		//配置访问权限
@@ -63,7 +63,7 @@ public class ShiroConfiguration {
 		filterChainDefinitionMap.put("/docs/**", "anon");
 		filterChainDefinitionMap.put("/druid/**", "anon");
 		filterChainDefinitionMap.put("/logout*", "logout");
-		filterChainDefinitionMap.put("/**", "authc");//表示需要认证才能访问
+		filterChainDefinitionMap.put("/**", "anon");//表示需要认证才能访问
 		filterChainDefinitionMap.put("/blog", "anon");
 		bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return bean;
