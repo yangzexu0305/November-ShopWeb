@@ -1,0 +1,1 @@
+INSERT INTO `nov_user` VALUES (1, 'yangzexu', '杨泽旭', 'yangzexu', '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', NULL, NULL);
