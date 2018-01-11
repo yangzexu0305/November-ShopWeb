@@ -24,7 +24,7 @@ public class NovemberApplication
     public static void main( String[] args )
     {
      logger.info("--------------------------------------------------");
-     logger.info("-----------------------应用启动---------------------");
+     logger.info("-----------------------November大型电商网站正在启动---------------------");
      logger.info("--------------------------------------------------");
      SpringApplication.run(NovemberApplication.class, args);
     }

@@ -38,6 +38,8 @@ public class AuthRealm extends AuthorizingRealm{
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		UsernamePasswordToken uToken = (UsernamePasswordToken) token;
 		String username = uToken.getUsername();
+		User u = new User();
+		u.setLoginName(username);
 		User user = userService.findUserByName(username);
 		String password = new String((char[])uToken.getCredentials());
 		if(user == null){
