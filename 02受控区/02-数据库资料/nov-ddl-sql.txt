@@ -1,0 +1,70 @@
+﻿CREATE TABLE nov_user(
+id INT PRIMARY KEY auto_increment COMMENT '主键',
+loginName	varchar(100) unique COMMENT '登陆名称',
+name varchar(200) COMMENT '姓名',
+password varchar(50) COMMENT '密码',
+gender char(1) COMMENT '性别',
+birthday varchar(50) COMMENT '生日',
+province varchar(50) COMMENT '省份',
+city varchar(50) COMMENT '城市',
+area varchar(50) COMMENT '区域',
+address varchar(200) COMMENT '详细地址',
+mobile varchar(20) COMMENT '手机',
+tell varchar(20) COMMENT '固定电话',
+safeQues varchar(200) COMMENT '安全问题',
+safeAns varchar(200) COMMENT '问题答案',
+qq varchar(30) COMMENT 'qq',
+email varchar(30) COMMENT '电子邮箱',
+level char(1) COMMENT '会员等级',
+consume decimal(10,2) COMMENT '消费金额',
+integral int COMMENT '剩余积分',
+loginNum varchar(10) COMMENT '登录次数',
+registerDate date COMMENT '注册时间',
+firstLoginedTime date COMMENT '第一次登陆时间',
+lastLoginedTime date COMMENT '最后一次登陆时间',
+pswChangeDate date COMMENT '密码修改时间',
+locked char(1) COMMENT '是否锁定（0:启用 1:停用）',
+status varchar(10) COMMENT '审核状态',
+createTime date,
+updateTime date
+) COMMENT='用户信息表';
+
+
+
+CREATE TABLE nov_role( 
+role_id INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+role_code varchar(20) unique COMMENT '角色编码',
+role_name varchar(30) COMMENT '角色名称',
+role_backup varchar(200) COMMENT '备注',
+createTime date,
+updateTime date
+) COMMENT='角色表';
+
+CREATE TABLE nov_user_role( 
+  ur_id	INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+user_id	int COMMENT '用户',
+role_id	int COMMENT '角色',
+createTime date,
+updateTime date
+) COMMENT='用户角色表';
+
+
+CREATE TABLE nov_resource( 
+res_id INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+res_type varchar(10) COMMENT '资源类型',
+res_string varchar(20) COMMENT '资源唯一字符串',
+per_string varchar(20) COMMENT '资源的shiro  permission字符串',
+descript varchar(200) COMMENT '描述',
+enabled char(1) COMMENT '是否可用(0:可用  1:不可用)',
+createTime date,
+updateTime date
+) COMMENT='资源表';
+
+CREATE TABLE nov_role_resource( 
+  id INT PRIMARY KEY AUTO_INCREMENT COMMENT '主键',
+role_id int COMMENT '角色',
+resource_id int COMMENT '资源',
+createTime date,
+updateTime date
+) COMMENT='用户角色表';
+
