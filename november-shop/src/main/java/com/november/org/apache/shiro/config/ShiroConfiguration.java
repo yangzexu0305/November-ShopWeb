@@ -41,6 +41,19 @@ public class ShiroConfiguration {
 		return new EhCacheManager();
 	}
 	
+	
+	/**
+	 * 配置核心安全事务管理器
+	 * @param authRealm
+	 * @return
+	 */
+	@Bean(name="securityManager")
+	public SecurityManager securityManager(@Qualifier("authRealm")AuthRealm authRealm){
+		DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
+		manager.setRealm(authRealm);
+		manager.setCacheManager(getCacheManage());
+		return manager;
+	}
 
 	/**
 	 * shiro过滤器
@@ -129,19 +142,6 @@ public class ShiroConfiguration {
 		AuthRealm authRealm = new AuthRealm();
 		authRealm.setCredentialsMatcher(credentialsMatcher);
 		return authRealm;
-	}
-	
-	/**
-	 * 配置核心安全事务管理器
-	 * @param authRealm
-	 * @return
-	 */
-	@Bean(name="securityManager")
-	public SecurityManager securityManager(@Qualifier("authRealm")AuthRealm authRealm){
-		DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
-		manager.setRealm(authRealm);
-		manager.setCacheManager(getCacheManage());
-		return manager;
 	}
 	
 	/**

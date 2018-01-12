@@ -1,7 +1,5 @@
 package com.november.common.utils;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.Map;
 
 import javax.servlet.http.Cookie;
@@ -11,23 +9,42 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
 /**
  * 获取Spring Bean工具类
  */
-public class SpringUtil {
+@Component
+public class SpringUtil implements ApplicationContextAware {
 
 	private static ApplicationContext applicationContext = null;
-	
+
 	private static Logger logger = LoggerFactory.getLogger(SpringUtil.class);
 
 	/**
 	 * 需要手动注入，才可以使用
+	 * 
 	 * @param applicationContext
 	 * @throws BeansException
 	 */
-	public static void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		SpringUtil.applicationContext = applicationContext;
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		if (SpringUtil.applicationContext == null) {
+			SpringUtil.applicationContext = applicationContext;
+		}
+		System.out.println("---------------------------------------------------------------------");
+
+		System.out.println("---------------------------------------------------------------------");
+
+		System.out.println(
+				"---------------me.shijunjie.util.SpringUtil------------------------------------------------------");
+
+		System.out.println(
+				"========ApplicationContext配置成功,在普通类可以通过调用SpringUtils.getAppContext()获取applicationContext对象,applicationContext="
+						+ SpringUtil.applicationContext + "========");
+
+		System.out.println("---------------------------------------------------------------------");
 	}
 
 	public static ApplicationContext getApplicationContext() {
@@ -73,13 +90,12 @@ public class SpringUtil {
 		}
 		for (int i = 0; i < cookie.length; i++) {
 			Cookie cook = cookie[i];
-			logger.info("请求Cookie："+cook.getName()+":"+cook.getValue());
-			if (cook.getName().equals("SESSION") && !"".equals(cook.getValue()+"".trim())) {
+			logger.info("请求Cookie：" + cook.getName() + ":" + cook.getValue());
+			if (cook.getName().equals("SESSION") && !"".equals(cook.getValue() + "".trim())) {
 				return cook.getValue().toString();
 			}
 		}
 		return null;
 	}
-	
-	
+
 }

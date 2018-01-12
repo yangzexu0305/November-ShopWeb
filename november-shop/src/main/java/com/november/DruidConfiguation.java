@@ -15,9 +15,11 @@ import org.springframework.dao.annotation.PersistenceExceptionTranslationPostPro
 
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
+import com.november.common.utils.SpringUtil;
 
 @Configuration
 public class DruidConfiguation {
+	
 	/*
 	 * druid数据源状态监控.
 	 */

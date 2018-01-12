@@ -1,6 +1,7 @@
 package com.november.common.utils;
 
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 
 import com.november.system.domain.User;
@@ -18,6 +19,12 @@ public class ShiroUtils {
 	public static User getCurrentUser(){
 		return (User) getSubject().getPrincipal();
 	}
+	
+	static public String getLoginName() {
+		User user = getCurrentUser();
+		return user != null ? user.getLoginName() : null;
+	}
+	
 	/**
 	 * 
 	 * @return
@@ -34,5 +41,14 @@ public class ShiroUtils {
 	 */
 	public static void logout(){
 		getSubject().logout();
+	}
+	
+	/**
+	 * 获取session
+	 * @return
+	 */
+	static public Session getSession() {
+		Session session = getSubject().getSession();
+		return session;
 	}
 }
