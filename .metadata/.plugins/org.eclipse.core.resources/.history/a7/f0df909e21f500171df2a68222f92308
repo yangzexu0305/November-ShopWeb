@@ -1,0 +1,16 @@
+package com.november.handle;
+
+import javax.servlet.annotation.WebListener;
+
+/**
+ * 监听器
+ * TODO
+ * @author yangzexu
+ * 2018年1月9日
+ *
+ */
+
+@WebListener
+public class HttpSessionMonitorListen implements HttpSessionListener{
+
+}

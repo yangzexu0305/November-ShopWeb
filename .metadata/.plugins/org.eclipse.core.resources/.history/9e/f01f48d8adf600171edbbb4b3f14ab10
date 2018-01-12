@@ -1,0 +1,1 @@
+elearn.token.jwt.issuer=novemberelearn.token.jwt.seed=ZWxlYXJuelearn.token.jwt.TTL=3600000elearn.token.jwt.refreshSpan=3300000elearn.token.jwt.retreshTTL=

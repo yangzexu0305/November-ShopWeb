@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#test{
+		border :1px solid blue;
+		background-color : red;
+		opacity:0.8; 
+		height : 400px;
+		width : 300px;
+	}
+</style>
+</head>
+
+<body>
+<div id="test">
+	
+</div>
+</body>
+</html>

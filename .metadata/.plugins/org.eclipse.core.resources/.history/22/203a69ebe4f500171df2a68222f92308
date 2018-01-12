@@ -1,0 +1,22 @@
+package com.november.system.domain;
+
+import java.io.Serializable;
+
+/**
+ * 角色
+ *
+ * TODO
+ * @author yangzexu
+ * 2018年1月10日
+ *
+ */
+public class Role implements Serializable{
+
+	private role_id
+	role_code
+	role_name
+	role_backup
+	createTime
+	updateTime
+
+}

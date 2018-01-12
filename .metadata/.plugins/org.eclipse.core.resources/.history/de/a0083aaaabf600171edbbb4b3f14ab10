@@ -1,0 +1,5 @@
+package com.november.common.context;
+
+public class GlobalConstant {
+
+}

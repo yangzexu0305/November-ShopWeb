@@ -1,0 +1,5 @@
+package com.november.system.domain;
+
+public class Resource {
+
+}

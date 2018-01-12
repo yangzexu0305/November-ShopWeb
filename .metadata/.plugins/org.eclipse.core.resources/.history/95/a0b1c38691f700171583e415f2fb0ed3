@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#test{
+		border :1px solid blue;
+		opacity:50%; 
+	}
+</style>
+</head>
+
+<body>
+<div id="test">
+	
+</div>
+</body>
+</html>

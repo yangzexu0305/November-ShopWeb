@@ -1,0 +1,24 @@
+package com.november.system.domain;
+
+import java.io.Serializable;
+
+/**
+ * 资源表   用于配置权限
+ *
+ * TODO
+ * @author yangzexu
+ * 2018年1月10日
+ *
+ */
+public class Resource implements Serializable{
+
+	private Integer resId;//主键
+	res_type
+	res_string
+	per_string
+	descript
+	enabled
+	createTime
+	updateTime
+
+}

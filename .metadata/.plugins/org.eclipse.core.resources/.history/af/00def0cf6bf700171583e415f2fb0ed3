@@ -1,0 +1,8 @@
+package com.november.log.mapper;
+
+import com.november.log.domain.NovLog;
+
+public interface NovLogMapper {
+
+	public void createLog(NovLog log);
+}

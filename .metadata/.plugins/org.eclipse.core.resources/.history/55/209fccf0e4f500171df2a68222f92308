@@ -1,0 +1,30 @@
+package com.november.system.domain;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.Set;
+
+/**
+ * 角色
+ *
+ * TODO
+ * @author yangzexu
+ * 2018年1月10日
+ *
+ */
+public class Role implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 605211400898662892L;
+	private Integer roleId; 
+ 	private String roleCode;  //角色编码
+	private String roleName;//角色姓名
+	private String roleBackup;//备注
+	private Set<User> users;//用户
+	private Set<Resouce> resuorces;//资源
+	private Date createTime;//创建时间
+	private Date updateTime;//更新时间
+
+}

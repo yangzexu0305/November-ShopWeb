@@ -1,0 +1,8 @@
+package com.november.common.spring;
+
+public class Snippet {
+	public static void main(String[] args) {
+		ApplicationManager
+	}
+}
+

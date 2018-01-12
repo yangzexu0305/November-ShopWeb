@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/november?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  thymeleaf: 
+    mode: LEGACYHTML5
+    cache: false
+  jackson: 
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  mvc:
+    view:
+      prefix: classpath:/templates
+      suffix: *.html
+logging:
+  level:
+    root: info
+    org.mybatis: info
+    com.november: debug
+mybatis: 
+  configuration:
+    map-underscore-to-camel-case: true  #设置自动驼峰命名转换，在xml中可以直接配置mapUnderscoreToCamelCase属性

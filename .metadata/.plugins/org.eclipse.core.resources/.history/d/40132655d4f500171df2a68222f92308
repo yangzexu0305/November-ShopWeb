@@ -1,0 +1,8 @@
+package com.november.system.domain;
+
+public class Snippet {
+	public static void main(String[] args) {
+		domain
+	}
+}
+

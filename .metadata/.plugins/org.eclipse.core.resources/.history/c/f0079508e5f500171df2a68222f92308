@@ -1,0 +1,22 @@
+package com.november.system.domain;
+
+/**
+ * 资源表   用于配置权限
+ *
+ * TODO
+ * @author yangzexu
+ * 2018年1月10日
+ *
+ */
+public class Resource {
+
+	res_id
+	res_type
+	res_string
+	per_string
+	descript
+	enabled
+	createTime
+	updateTime
+
+}

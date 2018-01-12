@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Copy 0 elements to &apos;november-shop/src/main/resources&apos;&#x0D;&#x0A;- Destination element: &apos;november-shop/src/main/resources&apos;" description="Copy compilation units" destination="=november-shop/src\/main\/resources" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1515389037459" units="0" version="1.0"/>&#x0A;<refactoring comment="Delete resource &apos;november-web&apos;" deleteContents="true" description="Delete resource &apos;november-web&apos;" element1="/november-web" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1515774130955"/>
+</session>

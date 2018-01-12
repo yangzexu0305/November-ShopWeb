@@ -1,0 +1,37 @@
+package com.november.handle;
+
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+/**
+ * 监听器
+ * TODO
+ * @author yangzexu
+ * 2018年1月9日
+ *
+ */
+
+@WebListener
+public class HttpSessionMonitorListener implements HttpSessionListener{
+
+	Logger logger = LoggerFactory.getLogger(HttpSessionMonitorListener.class);
+
+	@Override
+	public void sessionCreated(HttpSessionEvent se) {
+		
+	}
+
+	@Override
+	public void sessionDestroyed(HttpSessionEvent se) {
+		
+	}
+	
+	public static String formatTime(long ms){
+		return "";
+//		return strMinute + " 分 " + strSecond + " 秒";
+	}
+}

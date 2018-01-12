@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+			"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.november.system.mapper.UserMapper">
+	<resultMap type="com.november.system.domain.User" id="resultUser">
+		<id property="id" column="id"/>
+        <result property="loginName" column="loginName"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="gender" column="gender"/>
+        <result property="birthday" column="birthday"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="area" column="area"/>
+        <result property="address" column="address"/>
+        <result property="mobile" column="mobile"/>
+        <result property="tell" column="tell"/>
+        <result property="safeQues" column="safeQues"/>
+        <result property="safeAns" column="safeAns"/>
+        <result property="qq" column="qq"/>
+        <result property="email" column="email"/>
+        <result property="level" column="level"/>
+        <result property="balance" column="balance"/>
+        <result property="consume" column="consume"/>
+        <result property="integral" column="integral"/>
+        <result property="loginNum" column="loginNum"/>
+        <result property="registerDate" column="registerDate"/>
+        <result property="firstLoginedTime" column="firstLoginedTime"/>
+        <result property="lastLoginedTime" column="lastLoginedTime"/>
+        <result property="pswChangeDate" column="pswChangeDate"/>
+        <result property="locked" column="locked"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="createTime"/>
+        <result property="updateTime" column="updateTime"/>
+        <collection property="roles" ofType="ccom.november.system.domain.Role">
+            <id property="rid" column="rid"/>
+            <result property="rname" column="rname"/>
+            <collection property="modules" ofType="com.xyy.springboot.shiro.pojo.Module">
+                <id property="mid" column="mid"/>
+                <result property="mname" column="mname"/>
+            </collection>
+        </collection>
+	</resultMap>
+	
+	
+	<select id="findUserByName" resultMap="resultUser">
+		SELECT
+			us.id,
+			us.loginName,
+			us. NAME,
+			us. PASSWORD,
+			us.gender,
+			us.birthday,
+			us.province,
+			us.city,
+			us.area,
+			us.address,
+			us.mobile,
+			us.tell,
+			us.safeQues,
+			us.safeAns,
+			us.qq,
+			us.email,
+			us. LEVEL,
+			us.consume,
+			us.integral,
+			us.loginNum,
+			us.registerDate,
+			us.firstLoginedTime,
+			us.lastLoginedTime,
+			us.pswChangeDate,
+			us.locked,
+			us. STATUS,
+			us.createTime,
+			us.updateTime,
+			ro.role_id AS roleId,
+			ro.role_name AS roleName,
+			ro.role_code AS roleCode,
+			res.res_type AS resType,
+			res.res_string AS resString,
+			res.per_string AS perString
+		FROM
+			nov_user us
+		JOIN nov_user_role ur ON us.id = ur.user_id
+		JOIN nov_role ro ON ur.role_id = ro.role_id
+		JOIN nov_role_resource rr ON rr.role_id = ro.role_id
+		JOIN nov_resource res ON rr.resource_id = resource_id
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
