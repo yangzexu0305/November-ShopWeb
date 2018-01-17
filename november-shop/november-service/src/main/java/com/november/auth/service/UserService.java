@@ -15,4 +15,10 @@ public interface UserService {
 	 * @return
 	 */
 	public User findUserByName(String username);
+	
+	/**
+	 * 更新用户信息
+	 * @param user
+	 */
+	public void updateUser(User user);
 }

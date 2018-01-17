@@ -10,9 +10,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.november.common.interceptor.LogInterceptor;
-import com.november.common.interceptor.LoginInterceptor;
 import com.november.common.utils.SpringUtil;
+import com.november.interceptor.LogInterceptor;
+import com.november.interceptor.LoginInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -33,7 +33,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	 */
 	@Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("/index");
+        registry.addViewController("/").setViewName("redirect:/index");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE); 
         super.addViewControllers(registry);    
     }

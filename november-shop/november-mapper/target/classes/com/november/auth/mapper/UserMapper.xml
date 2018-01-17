@@ -98,6 +98,81 @@
 	</select>
 	
 	
+	<update id="updateUser" parameterType="com.november.auth.domain.User">
+		update nov_user
+		<set>
+			<if test="updateTime != null and updateTime != ''">
+				updateTime = #{updateTime},
+			</if>
+			<if test="name != null and name != ''">
+				name = #{name},
+			</if>
+			<if test="password != null and password != ''">
+				password = #{password},
+			</if>
+			<if test="gender != null and gender != ''">
+				gender = #{gender},
+			</if>
+			<if test="birthday != null and birthday != ''">
+				birthday = #{birthday},
+			</if>
+			<if test="province != null and province != ''">
+				province = #{province},
+			</if>
+			<if test="city != null and city != ''">
+				city = #{city},
+			</if>
+			<if test="area != null and area != ''">
+				area = #{area},
+			</if>
+			<if test="address != null and address != ''">
+				address = #{address},
+			</if>
+			<if test="mobile != null and mobile != ''">
+				mobile = #{mobile},
+			</if>
+			<if test="tell != null and tell != ''">
+				tell = #{tell},
+			</if>
+			<if test="safeQues != null and safeQues != ''">
+				safeQues = #{safeQues},
+			</if>
+			<if test="safeAns != null and safeAns != ''">
+				safeAns = #{safeAns},
+			</if>
+			<if test="qq != null and qq != ''">
+				qq = #{qq},
+			</if>
+			<if test="email != null and email != ''">
+				email = #{email},
+			</if>
+			<if test="level != null and level != ''">
+				level = #{level},
+			</if>
+			<if test="consume != null and consume != ''">
+				consume = #{consume},
+			</if>
+			<if test="integral != null and integral != ''">
+				integral = #{integral},
+			</if>
+			<if test="loginNum != null and loginNum != ''">
+				loginNum = #{loginNum},
+			</if>
+			<if test="lastLoginedTime != null and lastLoginedTime != ''">
+				lastLoginedTime = #{lastLoginedTime},
+			</if>
+			<if test="pswChangeDate != null and pswChangeDate != ''">
+				pswChangeDate = #{pswChangeDate},
+			</if>
+			<if test="locked != null and locked != ''">
+				locked = #{locked},
+			</if>
+		</set>
+		<where>
+			id = #{id}
+		</where>
+	</update>
+	
 </mapper>
 
 

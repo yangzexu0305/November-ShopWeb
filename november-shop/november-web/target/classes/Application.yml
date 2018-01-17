@@ -29,3 +29,9 @@ mybatis:
   mapper-locations:
   - classpath*:com/november/**/mapper/*.xml
   type-aliases-package: com.november.**.domain
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

@@ -3,7 +3,7 @@ Implementation-Title: november-utils
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: VULCAN
 Implementation-Vendor-Id: com.november
-Build-Jdk: 1.8.0_131
+Build-Jdk: 1.8.0_144
 Implementation-URL: http://maven.apache.org/november-utils
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.

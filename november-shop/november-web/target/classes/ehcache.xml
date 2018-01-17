@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
-         updateCheck="false">
-         
-         <!-- 　(1).diskStore： 为缓存路径，ehcache分为内存和磁盘两级，此属性定义磁盘的缓存位置。参数解释如下：　　　　
-         　　　　user.home – 用户主目录
-        　　　 　user.dir  – 用户当前工作目录
-       　　　　  java.io.tmpdir – 默认临时文件路径
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
 
-　　(2).defaultCache：默认缓存策略，当ehcache找不到定义的缓存时，则使用这个缓存策略。只能定义一个。
+	<!-- (1).diskStore： 为缓存路径，ehcache分为内存和磁盘两级，此属性定义磁盘的缓存位置。参数解释如下： user.home 
+		– 用户主目录 user.dir – 用户当前工作目录 java.io.tmpdir – 默认临时文件路径 (2).defaultCache：默认缓存策略，当ehcache找不到定义的缓存时，则使用这个缓存策略。只能定义一个。 
+		(3).cache：自定缓存策略，为自定义的缓存策略 -->
 
-       (3).cache：自定缓存策略，为自定义的缓存策略 -->
-         
-    <diskStore path="java.io.tmpdir/Tmp_EhCache"/>
-    <defaultCache eternal="false" maxElementsInMemory="1000" overflowToDisk="false" diskPersistent="false"
-                  timeToIdleSeconds="0" timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU"/>
+<!-- 必填属性：
+        name:设置缓存的名称，用于标志缓存,惟一
+        maxElementsInMemory:在内存中最大的对象数量
+        maxElementsOnDisk：在DiskStore中的最大对象数量，如为0，则没有限制
+        eternal：设置元素是否是永久的，如果为永久，则timeout忽略
+        overflowToDisk：是否当memory中的数量达到限制后，保存到Disk -->
+        
+<!-- 可选的属性：
+		timeToIdleSeconds：设置Element在失效前的允许闲置时间;多长时间不访问该缓存，那么ehcache 就会清除该缓存;
+					默认值是0，也就是可闲置时间无穷大。
+		timeToLiveSeconds：设置Element在失效前允许存活时间;缓存的存活时间，从开始创建的时间算起;
+					默认是0，也就是存活时间无穷大。 
+		diskPersistent：是否disk store在虚拟机启动时持久化。默认为false
+        diskExpiryThreadIntervalSeconds:运行disk终结线程的时间，默认为120秒
+-->
 
-    <cache name="novEhcache"
-           eternal="false"
-           maxElementsInMemory="100"
-           overflowToDisk="false"
-           diskPersistent="false"
-           timeToIdleSeconds="0"
-           timeToLiveSeconds="300"
-           memoryStoreEvictionPolicy="LRU"/>
+	<diskStore path="java.io.tmpdir/Tmp_EhCache" />
+	<defaultCache eternal="false" maxElementsInMemory="1000"
+		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
+		timeToLiveSeconds="600" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="novEhcache" eternal="false" maxElementsInMemory="100"
+		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="0"
+		timeToLiveSeconds="300" memoryStoreEvictionPolicy="LRU" />
+		
+	<cache name="LogCfgCache" maxElementsOnDisk="20000"
+		maxElementsInMemory="2000" eternal="true" overflowToDisk="true"
+		diskPersistent="true" />
 </ehcache>

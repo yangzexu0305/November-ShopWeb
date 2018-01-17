@@ -12,4 +12,10 @@ public interface UserMapper {
 	 * @return
 	 */
 	public User findUserByName(@Param("username")String username);
+	
+	/**
+	 * 更新用户信息
+	 * @param user
+	 */
+	public void updateUser(User user);
 }
